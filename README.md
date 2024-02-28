@@ -29,3 +29,10 @@ http://localhost:8080/frequency-check?string=
 Результат будет получен в формате JSON в виде:
 
 `“a”: 5, “c”: 4, “b”: 1`
+___
+
+### Swagger
+Для того чтобы получить доступ к Swagger необходимо открыть ссылку:
+```
+http://localhost:8081/swagger-ui/index.html
+```

@@ -1,6 +1,6 @@
 package com.testjob.controller;
 
-import com.testjob.usecase.StringHandler;
+import com.testjob.service.FrequencyCheckService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 
 @RestController
 public class FrequencyController {
-    StringHandler stringHandler = new StringHandler();
+    FrequencyCheckService frequencyCheckService = new FrequencyCheckService();
     @GetMapping("/frequency-check")
     public LinkedHashMap getStringForCharacterFrequency(@RequestParam(value = "string") String str) {
         if (str.isEmpty()) {
@@ -17,6 +17,6 @@ public class FrequencyController {
             map.put("Error", "Query parameter is empty string");
             return map;
         }
-        return stringHandler.checkCharacterFrequency(str);
+        return frequencyCheckService.checkCharacterFrequency(str);
     }
 }
